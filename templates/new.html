@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="/users/new" method="POST" class="col-2 my-5 mx-auto">
+    <input type="text" name="first-name" placeholder="First Name" class="form-control text-center my-2">
+    <input type="text" name="last-name" placeholder="Last Name" class="form-control text-center my-2">
+    <input type="text" name="img-url" placeholder="Image url" class="form-control text-center my-2">
+    <button class="btn btn-outline-primary d-block mx-auto">Create User!</button>
+</form>
+{% endblock %}

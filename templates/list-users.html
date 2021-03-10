@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<ul class="col-3 list-group-flush mx-auto text-center">
+    {% for user in users %}
+        <li class="list-group-item text-center"><a href="/users/{{user.id}}" class="display-6 text-center">{{user.full_name}}</a></li>
+    {% endfor %}
+</ul>
+
+<form action="/users/new" class="col-3 mx-auto">
+    <button class="btn btn-outline-dark d-block mx-auto">Create User</button>
+</form>
+{% endblock %}
