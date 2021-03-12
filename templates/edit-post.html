@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1 class="display-3 text-center">{{post.title}}</h1>
+    <p class="lead text-center fs-3 fw-lighter">{{post.content}}</p>
+
+    <form action="/posts/{{post.id}}/edit" method="POST" class="mx-auto my-3 col-3">
+        <label for="post-title">Title for your post</label>
+            <input type="text" name="post-title" class="form-control" placeholder="New title">
+        <label for="post-content">Content for your post</label>
+            <textarea type="text" name="post-content" class="form-control" placeholder="New content"></textarea>
+        <button class="btn btn-primary mx-auto d-block my-2">Submit Changes</button>
+    </form>
+
+    <form action="/posts/{{post.id}}">
+        <button class="btn btn-danger mx-auto d-block my-1">Cancel</button>
+    </form>
+{% endblock %}

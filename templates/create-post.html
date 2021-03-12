@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="display-6 text-center my-3">Create a post for {{user.full_name}}</h1>
+<form action="/users/{{user.id}}/posts/new" method="POST" class="form col-3 mx-auto">
+    <label for="post-title">Title for your post</label>
+        <input type="text" name="post-title" class="form-control" placeholder="title">
+    <label for="post-content">Content for your post</label>
+        <textarea type="text" name="post-content" class="form-control" placeholder="content"></textarea>
+    <button class="btn btn-primary d-block mx-auto my-3">Create Post!</button>
+</form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+    <p class="text-center small mb-0">Created By: <a href="/users/{{post.user.id}}">{{post.user.full_name}}</a></p>
+    <h1 class="display-3 text-center my-1">{{post.title}}</h1>
+    <p class="lead text-center fs-3 fw-lighter">{{post.content}}</p>
+    <p class="text-center small">Created at: {{post.created_at}}</p>
+    
+    <form action="/posts/{{post.id}}/edit" class="mx-auto my-1">
+        <button class="btn btn-primary d-block mx-auto">Edit</button>
+    </form>
+    <form action="/posts/{{post.id}}/delete" class="mx-auto my-1">
+        <button class="btn btn-danger d-block mx-auto">Delete</button>
+    </form>
+{% endblock %}
